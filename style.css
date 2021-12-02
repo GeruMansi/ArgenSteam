@@ -1,0 +1,29 @@
+/* body {
+    background: #1b2838;
+} */
+
+.texto-claro {
+    color: whitesmoke;
+}
+
+.div-populares {
+    width: 100%;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.card {
+    height: 300px;
+    width: 250px;
+    background-color: #777;
+}
+
+#listaDeJuegos {
+    width: 75%;
+    margin: auto;
+    list-style-type: none;
+}

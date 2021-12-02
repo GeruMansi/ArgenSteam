@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArgenSteam - Calculador de precios</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/darkly/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="container bg-secondary text-center p-3">
+        <h1 class="texto-claro fw-bold">
+            ArgenSteam
+        </h1>
+        <h5 class="texto-claro">Calculador de precios</h5>
+    </header>
+
+    <main class="container">
+         <!-- Calculador -->
+        <section class="mt-5">
+            <form class="d-flex flex-column align-items-center" id="mainForm">
+                <div class="mb-3 col-md-4">
+                    <input type="number" step="any" class="form-control" id="main-input" aria-describedby="mainInputHelp" name="input">
+                    <div id="mainInputHelp" class="form-text">Ingresá el valor que querés calcular.</div>
+                </div>
+                <button type="submit" class="btn btn-primary col-md-4">Calcular</button>
+            </form>
+            <div id="divRespuesta">
+
+            </div>
+        </section>
+
+        <!-- Listado de juegos populares obtenido mediante JSON -->
+        <section>
+            <h3 class="mt-5 texto-claro">Los más populares</h3>
+            <div class="div-populares" id="populares">
+
+            </div>
+        </section>
+
+       <!-- Lista de deseados -->
+        <section class="bg-secondary my-5 rounded-3">
+            <div class="rounded-3">
+                <h2 class="d-grid">
+                    <button id="boton-ldd" class="btn btn-primary btn-lg rounded-3 fw-bold" type="button">
+                    Lista de deseados
+                    </button>
+                </h2>
+                <div id="div-lista" class="p-3 bg-secondary">
+                    <form id="form-agregar" class="row mb-3 d-flex flex-column align-items-center">
+                        <div class="d-flex align-items-end justify-content-center gap-3">
+                            <div class="mb-3 col-md-4">
+                                <label for="agregar-nombre" class="form-label">Agregar juegos</label>
+                                <input type="text" class="form-control" id="agregar-nombre" placeholder="Nombre del juego" name="nombre">
+                            </div>
+                            <div class="mb-3 col-md-4">
+                                <input type="number" step="any" class="form-control" id="agregar-precio" placeholder="Precio del juego" name="precio">
+                            </div>
+                        </div>
+                        <button type="submit" class="col-md-8 btn btn-outline-light">Agregar</button>
+                    </form>
+                    <div>
+                        <ul id="listaDeJuegos">
+                            <p id="listaVacia" class="text-center">Nada por aquí, nada por allá...</p>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
