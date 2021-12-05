@@ -32,7 +32,7 @@ function crearEliminar() {
 function cargarLista() {
     arrayJuegos.forEach(juego => {
         listaDeJuegos.innerHTML += `
-            <li id="${juego.id}" class="d-flex alig-items-center gap-2 mb-2"><button id="btn-${juego.id}" class="btn btn-dark btn-sm py-0">X</button><strong>${juego.nombre}</strong>, precio Steam: ARS$ ${juego.precio} (precio final: ARS$ ${(juego.precio * 1.65).toFixed(2)})</li>
+            <div id="${juego.id}" class="mb-2 d-flex align-items-center gap-3"><button id="btn-${juego.id}" class="btn btn-dark btn-sm py-0">X</button><div><strong>${juego.nombre}</strong>, precio Steam: ARS$ ${juego.precio} (precio final: ARS$ ${(juego.precio * 1.65).toFixed(2)})</div></div>
         `
     })
 }
@@ -96,6 +96,9 @@ $(() => {
 
 // Mostrar juegos populares desde json local.
 let divPopulares = document.getElementById('populares')
+let popularesMobile = document.getElementById('populares-mobile')
+let divNovedades = document.getElementById('novedades')
+let novedadesMobile = document.getElementById('novedades-mobile')
 
 fetch('populares.json')
     .then(response => response.json())
@@ -103,13 +106,88 @@ fetch('populares.json')
         juegos.forEach(juego => {
             divPopulares.innerHTML += `
                 <div class="card">
-                    <img src="${juego.img}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">${juego.nombre}</h5>
+                    <img src="${juego.img}" class="card-img-top" alt="${juego.nombre}">
+                    <div class="card-body d-flex flex-column justify-content-evenly">
+                        <h3 class="card-title">${juego.nombre}</h3>
                         <p class="card-text">Precio Steam: ARS$ ${juego.precioSteam}</p>
                         <p class="card-text">Precio Final: ARS$ ${juego.precioFinal}</p>
                     </div>
                 </div>
             `
         })
+        for (let i = 0; i < juegos.length; i++) {
+            if (i == 0) {
+                popularesMobile.innerHTML += `
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <img src="${juegos[i].img}" class="card-img-top" alt="${juegos[i].nombre}">
+                            <div class="card-body d-flex flex-column justify-content-evenly">
+                                <h3 class="card-title">${juegos[i].nombre}</h3>
+                                <p class="card-text">Precio Steam: ARS$ ${juegos[i].precioSteam}</p>
+                                <p class="card-text">Precio Final: ARS$ ${juegos[i].precioFinal}</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            } else {
+                popularesMobile.innerHTML += `
+                    <div class="carousel-item">
+                        <div class="card">
+                            <img src="${juegos[i].img}" class="card-img-top" alt="${juegos[i].nombre}">
+                            <div class="card-body d-flex flex-column justify-content-evenly">
+                                <h3 class="card-title">${juegos[i].nombre}</h3>
+                                <p class="card-text">Precio Steam: ARS$ ${juegos[i].precioSteam}</p>
+                                <p class="card-text">Precio Final: ARS$ ${juegos[i].precioFinal}</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        }
+    })
+
+fetch('novedades.json')
+    .then(response => response.json())
+    .then( juegos => {
+        juegos.forEach(juego => {
+            divNovedades.innerHTML += `
+                <div class="card">
+                    <img src="${juego.img}" class="card-img-top" alt="${juego.nombre}">
+                    <div class="card-body d-flex flex-column justify-content-evenly">
+                        <h3 class="card-title">${juego.nombre}</h3>
+                        <p class="card-text">Precio Steam: ARS$ ${juego.precioSteam}</p>
+                        <p class="card-text">Precio Final: ARS$ ${juego.precioFinal}</p>
+                    </div>
+                </div>
+            `
+        })
+        for (let i = 0; i < juegos.length; i++) {
+            if (i == 0) {
+                novedadesMobile.innerHTML += `
+                    <div class="carousel-item active">
+                        <div class="card">
+                            <img src="${juegos[i].img}" class="card-img-top" alt="${juegos[i].nombre}">
+                            <div class="card-body d-flex flex-column justify-content-evenly">
+                                <h3 class="card-title">${juegos[i].nombre}</h3>
+                                <p class="card-text">Precio Steam: ARS$ ${juegos[i].precioSteam}</p>
+                                <p class="card-text">Precio Final: ARS$ ${juegos[i].precioFinal}</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            } else {
+                novedadesMobile.innerHTML += `
+                    <div class="carousel-item">
+                        <div class="card">
+                            <img src="${juegos[i].img}" class="card-img-top" alt="${juegos[i].nombre}">
+                            <div class="card-body d-flex flex-column justify-content-evenly">
+                                <h3 class="card-title">${juegos[i].nombre}</h3>
+                                <p class="card-text">Precio Steam: ARS$ ${juegos[i].precioSteam}</p>
+                                <p class="card-text">Precio Final: ARS$ ${juegos[i].precioFinal}</p>
+                            </div>
+                        </div>
+                    </div>
+                `
+            }
+        }
     })

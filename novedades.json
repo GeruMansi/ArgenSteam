@@ -1,0 +1,36 @@
+[
+    {
+        "nombre": "Icarus",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1149460/capsule_184x69.jpg?t=1638624911",
+        "precioSteam": "329.99",
+        "precioFinal": "544.48"
+    },
+
+    {
+        "nombre": "Chorus",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1153640/capsule_184x69_alt_assets_0.jpg?t=1638563776",
+        "precioSteam": "439.99",
+        "precioFinal": "725.98"
+    },
+
+    {
+        "nombre": "Battlefield 2042",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1517290/capsule_184x69.jpg?t=1638287314",
+        "precioSteam": "5499",
+        "precioFinal": "9073.35"
+    },
+
+    {
+        "nombre": "The Last Stand: Aftermath",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1266840/capsule_184x69.jpg?t=1637073796",
+        "precioSteam": "279.99",
+        "precioFinal": "461.98"
+    },
+
+    {
+        "nombre": "Farming Simulator 22",
+        "img": "https://cdn.akamai.steamstatic.com/steam/apps/1248130/capsule_184x69.jpg?t=1637940425",
+        "precioSteam": "2499",
+        "precioFinal": "4123.35"
+    }
+]

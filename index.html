@@ -25,21 +25,52 @@
          <!-- Calculador -->
         <section class="mt-5">
             <form class="d-flex flex-column align-items-center" id="mainForm">
-                <div class="mb-3 col-md-4">
+                <div class="mb-3 col-sm-8 col-lg-4">
                     <input type="number" step="any" class="form-control" id="main-input" aria-describedby="mainInputHelp" name="input">
                     <div id="mainInputHelp" class="form-text">Ingresá el valor que querés calcular.</div>
                 </div>
-                <button type="submit" class="btn btn-primary col-md-4">Calcular</button>
+                <button type="submit" class="btn btn-primary col-4 col-lg-4">Calcular</button>
             </form>
             <div id="divRespuesta">
 
             </div>
         </section>
 
-        <!-- Listado de juegos populares obtenido mediante JSON -->
-        <section>
+        <!-- Listado de juegos populares y novedades obtenido mediante JSON -->
+        <section class="container">
             <h3 class="mt-5 texto-claro">Los más populares</h3>
+            <div id="carousel-1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner" id="populares-mobile">
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-1" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-1" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
             <div class="div-populares" id="populares">
+
+            </div>
+
+            <h3 class="mt-5 texto-claro">Las últimas novedades</h3>
+            <div class="carousel slide" id="carousel-2" data-bs-ride="carousel">
+                <div class="carousel-inner" id="novedades-mobile">
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel-2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="div-novedades" id="novedades">
 
             </div>
         </section>
@@ -53,8 +84,8 @@
                     </button>
                 </h2>
                 <div id="div-lista" class="p-3 bg-secondary">
-                    <form id="form-agregar" class="row mb-3 d-flex flex-column align-items-center">
-                        <div class="d-flex align-items-end justify-content-center gap-3">
+                    <form id="form-agregar" class="row mb-4 d-flex flex-column align-items-center">
+                        <div class="d-flex align-items-end justify-content-center gap-1">
                             <div class="mb-3 col-md-4">
                                 <label for="agregar-nombre" class="form-label">Agregar juegos</label>
                                 <input type="text" class="form-control" id="agregar-nombre" placeholder="Nombre del juego" name="nombre">
@@ -63,13 +94,13 @@
                                 <input type="number" step="any" class="form-control" id="agregar-precio" placeholder="Precio del juego" name="precio">
                             </div>
                         </div>
-                        <button type="submit" class="col-md-8 btn btn-outline-light">Agregar</button>
+                        <button type="submit" class="col-11 col-md-8 btn btn-outline-light">Agregar</button>
                     </form>
                     <div>
-                        <ul id="listaDeJuegos">
+                        <div id="listaDeJuegos">
                             <p id="listaVacia" class="text-center">Nada por aquí, nada por allá...</p>
                             
-                        </ul>
+                        </div>
                     </div>
                 </div>
             </div>
